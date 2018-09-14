@@ -1,3 +1,4 @@
+// Package times contains common date/time operations.
 package times
 
 import (
@@ -18,11 +19,11 @@ func Parse(value string) (time.Time, error) {
 
 // MustParse is a helper that wraps a call to Parse() function and panics if the error is non-nil.
 func MustParse(value string) time.Time {
-	time, e := Parse(value)
+	t, e := Parse(value)
 
 	if e != nil {
 		log.Panicf("failed to parse time [%s]: %s", value, e)
 	}
 
-	return time
+	return t
 }
