@@ -50,7 +50,7 @@ func TestMustParse_Success(t *testing.T) {
 
 	got := MustParse(ts)
 
-	if got != tt {
+	if !got.Equal(tt) {
 		t.Errorf("MustParse() - %v, want %v", got, tt)
 	}
 }
